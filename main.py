@@ -3,6 +3,7 @@ from routers import products, users, basic_auth_users, jwt_auth_users, users_db
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()     #Crea una instancia de la aplicación FastAPI
+port = 8000
 
 app.include_router(products.router)  #Incluye el router en la aplicación principal
 app.include_router(users.router)
@@ -17,4 +18,5 @@ async def root():   #Define la función que maneja las solicitudes GET a la ruta
 
 @app.get("/link")       
 async def link():   
+
     return {"link": "https://www.youtube.com/watch?v=ZXIWU8GLsAc&list=RDZXIWU8GLsAc&start_radio=1"}
